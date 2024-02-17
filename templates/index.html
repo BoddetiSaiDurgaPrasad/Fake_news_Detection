@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>fake news detection</title>
+</head>
+<style>
+body{
+background-image:url('https://cdn.pixabay.com/photo/2017/06/14/08/20/map-of-the-world-2401458_1280.jpg');
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-size:cover;
+}
+input[type=text]{
+width:50%;
+padding:12px 20px;
+margin:8px 0;
+display:inline-block;
+border:1px solid #ccc;
+border-radius:4px;
+box-sizing:border-box;
+}
+input[type=button]{
+width:20%;
+background-color:#45a049;
+}
+</style>
+<body>
+<center>
+<h1 style="font-size:60px;">Fake News Detection</h1>
+<form action="/res" method="post" enctype="multipart/form-data">
+    <input type="text" id="a" placeholder="please enter the news here" name="newsName"><br>
+    <button class="btn btn-danger float-right">Submit</button>
+</form>
+{% if res == 0%}
+<div>
+    <h1>Fake News</h1>
+</div>
+{% endif %}
+{% if res == 1%}
+<div>
+    <h1>Not a Fake News</h1>
+</div>
+{% endif %}
+</center>
+</body>
+</html>
